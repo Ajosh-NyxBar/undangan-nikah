@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { FaEnvelopeOpenText } from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
 
 interface HeroProps {
   onOpen?: () => void;
@@ -22,51 +22,85 @@ export default function Hero({ onOpen, isOpened = true }: HeroProps) {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
+      className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center"
     >
+      {/* Background Image */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -z-10">
         <Image
-          src="/1.jpg" // Assuming 1.jpg is the hero image
-          alt="Wedding Couple"
+          src="/6.jpg"
+          alt="Background"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-[0.4]"
           priority
         />
       </motion.div>
-      
-      <motion.div 
-        style={{ opacity }}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-        className="text-center text-white z-10 px-4"
-      >
-        <h2 className="text-xl md:text-2xl font-light tracking-[0.2em] mb-4 uppercase">
-          The Wedding Of
-        </h2>
-        <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6">
-          Mawar & Sartana
-        </h1>
-        <p className="text-lg md:text-xl font-light tracking-widest">
-          09 . 11 . 2025
-        </p>
-      </motion.div>
 
-      {!isOpened ? (
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-50">
+      <motion.div
+        style={{ opacity }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="z-10 flex flex-col items-center justify-center w-full max-w-md px-4 text-center h-full py-10"
+      >
+        {/* Header Text */}
+        <div className="mb-6 text-white">
+          <h2 className="text-xs md:text-sm font-light tracking-[0.2em] uppercase mb-1">
+            The Wedding Of
+          </h2>
+          <h1 className="text-2xl md:text-3xl font-serif font-bold tracking-wide">
+            SINDI & HAMDANI
+          </h1>
+        </div>
+
+        {/* Photo Frame */}
+        <div className="relative mb-8 group">
+           {/* Tape Top Left */}
+           <div className="absolute -top-3 -left-3 w-12 h-4 bg-[#e0d8c8] opacity-90 rotate-[-45deg] shadow-sm z-20"></div>
+           {/* Tape Bottom Right */}
+           <div className="absolute -bottom-3 -right-3 w-12 h-4 bg-[#e0d8c8] opacity-90 rotate-[-45deg] shadow-sm z-20"></div>
+
+          <div className="relative bg-white p-3 pb-8 shadow-2xl rotate-[-2deg] transition-transform duration-500 group-hover:rotate-0">
+            <div className="relative w-48 h-64 md:w-56 md:h-72 overflow-hidden">
+              <Image
+                src="/6.jpg"
+                alt="Couple Photo"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Invitation Text */}
+        <div className="text-white space-y-3 mb-8">
+          <p className="text-sm font-light tracking-widest uppercase">Kepada</p>
+          <p className="text-xs md:text-sm font-light leading-relaxed opacity-90 max-w-xs mx-auto">
+            Dengan penuh rasa syukur, kami mengundang kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan kami yang penuh bahagia ini
+          </p>
+          <div className="flex justify-center gap-1">
+             <span className="w-1 h-1 bg-white rounded-full opacity-50"></span>
+             <span className="w-1 h-1 bg-white rounded-full opacity-100"></span>
+             <span className="w-1 h-1 bg-white rounded-full opacity-50"></span>
+          </div>
+        </div>
+
+        {/* Button */}
+        {!isOpened && (
           <button
             onClick={onOpen}
-            className="bg-white/20 backdrop-blur-sm border border-white/50 text-white px-8 py-3 rounded-full text-lg tracking-widest hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2"
+            className="bg-black text-white px-6 py-2 rounded-md text-sm font-bold tracking-wide hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 border border-white/20 shadow-lg"
           >
-            <FaEnvelopeOpenText />
-            BUKA UNDANGAN
+            Open Invitation <FaPaperPlane className="text-xs" />
           </button>
-        </div>
-      ) : (
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white">
-          <span className="text-sm tracking-widest">SCROLL</span>
-        </div>
-      )}
+        )}
+        
+        {isOpened && (
+             <div className="animate-bounce text-white mt-4">
+                <span className="text-xs tracking-widest">SCROLL DOWN</span>
+             </div>
+        )}
+
+      </motion.div>
     </section>
   );
 }

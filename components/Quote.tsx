@@ -31,7 +31,7 @@ export default function Quote() {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-11-09T09:00:00").getTime();
+    const targetDate = new Date("2025-12-14T09:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -58,7 +58,7 @@ export default function Quote() {
       {/* Parallax Background Image */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 w-full h-[120%] -top-[10%] z-0">
         <Image
-          src="/4.jpg" // Using a different image for variety
+          src="/6.jpg" // Using a different image for variety
           alt="Background"
           fill
           className="object-cover brightness-[0.3]"
@@ -96,10 +96,10 @@ export default function Quote() {
           viewport={{ once: true }}
           className="absolute top-12 right-6 md:static w-auto flex flex-col gap-6 md:gap-12 items-start z-20 md:pr-10 md:-mt-32"
         >
-          <CountdownItem value={timeLeft.seconds} label="Detik" />
-          <CountdownItem value={timeLeft.minutes} label="Menit" />
-          <CountdownItem value={timeLeft.hours} label="Jam" />
           <CountdownItem value={timeLeft.days} label="Hari" />
+          <CountdownItem value={timeLeft.hours} label="Jam" />
+          <CountdownItem value={timeLeft.minutes} label="Menit" />
+          <CountdownItem value={timeLeft.seconds} label="Detik" />
         </motion.div>
       </div>
 
@@ -113,7 +113,7 @@ export default function Quote() {
       >
         <div className="relative w-full h-full border-t-8 border-l-8 border-white/10 shadow-2xl">
             <Image
-            src="/5.jpg" // Another couple photo
+            src="/7.jpg" // Another couple photo
             alt="Couple Portrait"
             fill
             className="object-cover"

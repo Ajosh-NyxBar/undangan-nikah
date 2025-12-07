@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center mix-blend-difference text-white">
-        <div className="text-xl font-bold tracking-widest uppercase">M & S</div>
+        <div className="text-xl font-bold tracking-widest uppercase">S & H</div>
         <button onClick={toggleMenu} className="text-2xl focus:outline-none">
           <FaBars />
         </button>

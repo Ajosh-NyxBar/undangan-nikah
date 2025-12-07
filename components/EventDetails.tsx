@@ -25,10 +25,10 @@ const EventCard = ({ title, date, time, location, address, mapLink, imageSrc, de
     
     <div className="p-6 text-white">
       <div className="flex items-start gap-4 mb-4">
-        <div className="text-5xl font-serif font-bold text-amber-400">09</div>
+        <div className="text-5xl font-serif font-bold text-amber-400">14</div>
         <div className="flex flex-col justify-center h-full pt-1">
             <span className="text-lg font-semibold">Minggu</span>
-            <span className="text-sm opacity-75">November 2025</span>
+            <span className="text-sm opacity-75">Desember 2025</span>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function EventDetails() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           <EventCard 
             title="Akad Nikah"
-            date="9 November 2025"
+            date="14 Desember 2025"
             time="09.00 WIB s.d Selesai"
             location="Kediaman Mempelai Wanita"
             address="Kp. Nunuk Rt.01 Rw.06 Ds. Hegarmanah Kec. Cikancung Kab. Bandung (Pinggir Sekolah MA Al-Hasan)"
@@ -87,7 +87,7 @@ export default function EventDetails() {
           />
           <EventCard 
             title="Resepsi"
-            date="9 November 2025"
+            date="14 Desember 2025"
             time="11.00 WIB s.d Selesai"
             location="Kediaman Mempelai Wanita"
             address="Kp. Nunuk Rt.01 Rw.06 Ds. Hegarmanah Kec. Cikancung Kab. Bandung"

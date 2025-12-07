@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="relative h-screen w-full overflow-hidden flex items-center justify-center text-white">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/1.jpg" // Reuse hero image or another one
+          src="/7.jpg" // Reuse hero image or another one
           alt="Footer Background"
           fill
           className="object-cover brightness-50"
@@ -33,7 +33,7 @@ export default function Footer() {
         </h1>
 
         <div className="text-sm opacity-50 mt-20">
-          <p>Created with ❤️ by GitHub Copilot</p>
+          © 2025. All rights reserved.
         </div>
       </motion.div>
     </footer>
